@@ -1,6 +1,7 @@
 package com.ibdb.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,12 +22,14 @@ public class BookServiceImpl implements BookService{
 	}
 
 	@Override
-	public Book getBookById(String id) {
-		return this.bookRepository.findById(id).get();
+	public Optional<Book> getBookById(String id) {
+		Optional<Book> book = this.bookRepository.findById(id);
+		return book;
 	}
 
 	@Override
 	public List<Book> listAllBooks() {
+
 		return this.bookRepository.findAll();
 	}
 
@@ -37,18 +40,13 @@ public class BookServiceImpl implements BookService{
 	}
 
 	@Override
-	public Integer deleteBookById(String id) {
-		try {
-			this.bookRepository.deleteById(id);
-			return 1;	
-		} catch(Exception e) {
-			return 0;
-		}
-		
+	public void deleteBookById(String id) {
+		this.bookRepository.deleteById(id);
 	}
 
 	@Override
 	public Book updateBook(Book book) {
+
 		return this.bookRepository.save(book);
 	}
 }
