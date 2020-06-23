@@ -29,7 +29,6 @@ public class BookServiceImpl implements BookService{
 
 	@Override
 	public List<Book> listAllBooks() {
-
 		return this.bookRepository.findAll();
 	}
 

@@ -23,9 +23,8 @@ export class BookService {
     return this.http.get(`${this.baseUrl}`);
   }
 
-  saveBook(book: Book) {
-    console.log(book)
-    return this.http.post(this.baseUrl, JSON.stringify(book), httpOptions);
+  saveBook(book: Book){
+    return this.http.post(this.baseUrl, JSON.stringify(book), httpOptions).subscribe(data => console.log(data));
   }
 
   delete(id: String) {
