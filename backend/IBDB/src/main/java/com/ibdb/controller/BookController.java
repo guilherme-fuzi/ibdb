@@ -12,12 +12,13 @@ import com.ibdb.documents.Book;
 import com.ibdb.service.BookService;
 
 @RestController
+@CrossOrigin("http://localhost:4200")
 @RequestMapping("/book")
 public class BookController {
 
 	@Autowired
 	private BookService bookService;
-	
+
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Book> registerBook(@RequestBody Book book){

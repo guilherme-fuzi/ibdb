@@ -1,0 +1,23 @@
+<div class="container w-50 mt-3">
+    <div class="submit-form">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Title" [(ngModel)]="book.title">
+        </div>
+        <div class="form-row">
+            <div class="col-7">
+                <input type="text" class="form-control" placeholder="Author" [(ngModel)]="book.author">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Gender" [(ngModel)]="book.gender">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="mt-3">
+                <button type="submit" (click)="createBook()" class="btn btn-primary mr-2">Register</button>
+                <button type="submit" class="btn btn-secondary mr-2" disabled>Update</button>
+                <button type="submit" class="btn btn-warning mr-2" disabled>Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
