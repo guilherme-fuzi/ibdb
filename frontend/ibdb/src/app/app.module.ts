@@ -1,4 +1,3 @@
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -8,7 +7,6 @@ import { BookModule } from './book/book.module';
 import { BookService } from './book/book.service';
 import { routing } from './app.routing';
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +15,6 @@ import { routing } from './app.routing';
     BrowserModule,
     BookModule,
     HttpClientModule,
-    FormsModule,
     routing
   ],
   providers: [BookService],
