@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="672a4464-7962-4e39-856a-ac224e5336e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/ibdb/src/app/book/book.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/ibdb/src/app/book/book.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/ibdb/src/app/book/book.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/ibdb/src/app/book/book.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/ibdb/src/app/book/book.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/ibdb/src/app/book/book.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +57,7 @@
       <workItem from="1593007935837" duration="660000" />
       <workItem from="1593023581104" duration="607000" />
       <workItem from="1593095174103" duration="617000" />
-      <workItem from="1593099426189" duration="1445000" />
+      <workItem from="1593099426189" duration="2051000" />
     </task>
     <servers />
   </component>
