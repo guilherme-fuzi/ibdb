@@ -19,16 +19,15 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  getBookList(): Observable<any>{
-    return this.http.get(`${this.baseUrl}`);
-  }
-
   saveBook(book: Book){
     return this.http.post(this.baseUrl, JSON.stringify(book), httpOptions).subscribe(data => console.log(data));
   }
 
   delete(id: String) {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+    return this.http.delete(`${this.baseUrl}/${id}`).subscribe();
   }
 
+  getBookList(): Observable<any>{
+    return this.http.get(`${this.baseUrl}`);
+  }
 }

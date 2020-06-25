@@ -1,5 +1,5 @@
 <div class="container w-50 mt-3">
-    <form class="submit-form" name="form" #f="ngForm" (ngSubmit)="createBook(); f.reset()">
+    <form class="submit-form" name="form" #f="ngForm" (ngSubmit)="createBook(); loadData(); f.reset()">
         <div class="form-group">
             <input type="text" name="title" class="form-control" placeholder="Title" 
                     [(ngModel)]="book.title" required>
@@ -17,9 +17,35 @@
         <div class="form-row">
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary mr-2" [disabled]="!f.valid">Register</button>
-                <button type="button" class="btn btn-secondary mr-2">Update</button>
-                <button type="submit" class="btn btn-warning mr-2" disabled>Delete</button>
+                <button type="button" class="btn btn-secondary mr-2" disabled>Update</button>
             </div>
         </div>   
     </form>
+</div>
+
+<div class="container mt-3">
+    <hr>
+    <table class="table table-stripped">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author(s)</th>
+            <th scope="col">Gender</th>
+            <th scope="col" style="text-align: center;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of bookList | async">
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.gender }}</td>             
+            <td>
+                <div class="btn-group btn-group-sm" role="group">
+                    <button type="submit" class="btn btn-danger"  (click)="deleteBook(book.id); loadData()">Delete</button>
+                    <button type="submit" class="btn btn-warning" (click)="loadData()">Update</button>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 </div>

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from './book.service';
 import { Book } from './book';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-book',
@@ -11,6 +12,8 @@ import { NgForm } from '@angular/forms';
 })
 export class BookComponent implements OnInit {
   
+  bookList: Observable<Book[]>;
+
   book = {
     title: '',
     author: '',
@@ -20,6 +23,7 @@ export class BookComponent implements OnInit {
   constructor(public bookService: BookService) { }
 
   ngOnInit(): void {
+    this.loadData();
   }
 
   createBook(){
@@ -27,7 +31,15 @@ export class BookComponent implements OnInit {
     this.bookService.saveBook(data);
   }
 
-  showMessage(){
+  deleteBook(id: String){
+    this.bookService.delete(id);
+  }
+
+  updateBook(){
     
+  }
+
+  loadData(){
+    this.bookList = this.bookService.getBookList();
   }
 }
