@@ -11,7 +11,7 @@
 
       Coming soon: 
         - Add search bar feature.
-        - Possibility to add comments and ratings for a specific book.
+        - Possibility to add comments and ratings for an specific book.
         - New grid in the main page.
         - Login system
         - Improve the REST architecture
