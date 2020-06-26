@@ -1,6 +1,6 @@
 # ibdb - Internet Book DataBase
 
- Simple full stack API
+ Simple full stack application following REST architecture
  
  Back-end: Java 8, Spring Boot, MongoDB;
  
@@ -14,3 +14,4 @@
         - Possibility to add comments and ratings for a specific book.
         - New grid in the main page.
         - Login system
+        - Improve the REST architecture
