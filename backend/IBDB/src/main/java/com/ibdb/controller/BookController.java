@@ -20,9 +20,8 @@ public class BookController {
 	private BookService bookService;
 
 	@PostMapping
-	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Book> registerBook(@RequestBody Book book){
-		return ResponseEntity.ok(this.bookService.registerBook(book));
+		return new ResponseEntity<Book>(this.bookService.registerBook(book), HttpStatus.CREATED);
 	}
 	
 	@GetMapping
@@ -36,15 +35,21 @@ public class BookController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Book> getBook(@PathVariable(name="id")String id){
-		Optional<Book> book = this.bookService.getBookById(id);
-		return book.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+		Optional<Book> bookO = this.bookService.getBookById(id);
+		if(!bookO.isPresent()){
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Book>(bookO.get(), HttpStatus.OK);
 	}
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<Book> updateBook(@PathVariable(name="id")String id, @RequestBody Book book){
-		book.setId(id);
-		
-		return ResponseEntity.ok(this.bookService.updateBook(book));
+		Optional<Book> bookO = this.bookService.getBookById(id);
+		if(!bookO.isPresent()){
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		book.setId(bookO.get().getId());
+		return new ResponseEntity<Book>(this.bookService.updateBook(book), HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/{id}")

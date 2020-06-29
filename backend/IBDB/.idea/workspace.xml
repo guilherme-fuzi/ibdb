@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="672a4464-7962-4e39-856a-ac224e5336e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ibdb/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ibdb/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ibdb/documents/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ibdb/documents/Book.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +61,7 @@
       <workItem from="1593095174103" duration="617000" />
       <workItem from="1593099426189" duration="2055000" />
       <workItem from="1593184464483" duration="2704000" />
+      <workItem from="1593443817360" duration="397000" />
     </task>
     <servers />
   </component>
